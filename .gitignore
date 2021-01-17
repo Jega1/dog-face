@@ -1,0 +1,5 @@
+.env
+node_modules
+dev.json
+database.json
+
