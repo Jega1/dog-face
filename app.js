@@ -55,7 +55,6 @@ app.use((req, res, next) => {
 
 app.use("/api/user", usersRoutes);
 app.use("/api/dog", dogRoutes);
-
  app.use("/api/vet", vetRoutes);
  app.use("/api/trainning", trainningRoutes);
  app.use("/api/medical", medicalRoutes);
