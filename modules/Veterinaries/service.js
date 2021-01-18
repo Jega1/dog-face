@@ -3,7 +3,8 @@ const Queries = require("./query");
 
 
 exports.getAllVet = (req, callback) => {
-			Queries.getAllVet(req, (response) => {
+  Queries.getAllVet(req, (response) => {
+                console.log(response);
 					return callback({
 					success: true,
 					message: "All vetos",

@@ -12,7 +12,8 @@ const db = require("../../setup/database");
 			if (err) {
 				return failureCallback(err);
 			}
-			if (rows.length > 0) {
+      if (rows.length > 0) {
+
 				return successCallback(rows);
 			} else {
 				return successCallback();
