@@ -7,7 +7,7 @@ const db = require("../../setup/database");
 
     let sqlQuery =
       // `SELECT * FROM users INNER JOIN veterinary v ON users.id_user=v.id_user WHERE users.is_veterinay = 1`
-        `SELECT * FROM users WHERE users.is_veterinary = 1`
+        `SELECT * FROM users WHERE is_veterinary = 1`
 		db.query(sqlQuery, (err, rows) => {
 			if (err) {
 				return failureCallback(err);
