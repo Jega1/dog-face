@@ -10,14 +10,14 @@ const connection = mysql.createPool({
 	socketPath: databaseConfig.socketPath
 });
 
- connection.getConnection((err) => {
- 	if (err) {
- 		console.error("error connecting: " + err.stack);
-		return;
- 	}
+//  connection.getConnection((err) => {
+//  	if (err) {
+//  		console.error("error connecting: " + err.stack);
+// 		return;
+//  	}
 
-   console.log("connected as id " + connection.threadId);
+//    console.log("connected as id " + connection.threadId);
 
- });
+ //});
 
 module.exports = connection;
