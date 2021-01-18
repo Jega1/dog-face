@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(morgan("tiny"));
-app.use("/images", express.static(path.join(__dirname, "images")));
+//app.use("/images", express.static(path.join(__dirname, "images")));
 
 
 app.use((req, res, next) => {

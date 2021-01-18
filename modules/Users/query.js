@@ -2,14 +2,7 @@ const db = require( "../../setup/database");
 
 
 exports.getUser =  (param, successCallback, failureCallback) => {
-  let sqlQuery
-  try{
-     sqlQuery =  `SELECT email, username FROM users WHERE id_user=${param.params.id}`;
-  }catch(err){
-
-  }
-
-
+    let sqlQuery = `SELECT * FROM users WHERE id_user=${param.params.id}`;
   db.query(sqlQuery, (err, rows) => {
     if (err) {
       return failureCallback(err);
@@ -20,8 +13,6 @@ exports.getUser =  (param, successCallback, failureCallback) => {
       return successCallback("No matching user");
     }
   })
-
-
 };
 
 
@@ -133,14 +124,15 @@ try{
   };
 
   exports.editUser = (param) => {
-    let sqlQuery = `UPDATE users SET  username="${param.body.username}", email ="${param.body.email}",telephone="${param.body.telephone}",address="${param.body.address}", code_postal ="${param.body.code_postal}", ville ="${param.body.ville}",longitude ="${param.body.longitude}",latitude ="${param.body.latitude}" WHERE id_user=${param.params.id}`;
-   db.query(sqlQuery, (err, rows) => {
-    if (err) {
-    return "Error Occured";
-    } else {
-      return rows;
-    }
-  })
+  let sqlQuery = `UPDATE users SET  username="${param.body.username}", email ="${param.body.email}",telephone="${param.body.telephone}",address="${param.body.address}", code_postal ="${param.body.code_postal}", ville ="${param.body.ville}",longitude ="${param.body.longitude}",latitude ="${param.body.latitude}" WHERE id_user=${param.params.id}`;
+    console.log(sqlQuery);
+    db.query(sqlQuery, (err, rows) => {
+      if (err) {
+        return "Error Occured";
+      } else {
+        return rows;
+      }
+    })
 };
 
 

@@ -11,10 +11,10 @@ exports.authenticate = (req, res) => {
 
 };
 
-//added then bloc in this
+
 
 exports.getUser= (req, res) => {
-    UserServices.getUser(req) .then( result => {
+    UserServices.getUser(req,  result => {
       result.success ? res.status(200).send(result) : res.status(404).send(result)
     })
   };

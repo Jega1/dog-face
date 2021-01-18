@@ -6,7 +6,7 @@ const db = require ("../../setup/database");
 
 
 exports.getAllStepsByIdLess = (param, successCallback, failureCallback) => {
-    let sqlQuery = `SELECT * FROM step_lesson WHERE id_lesson=${param.params.id}`;
+    let sqlQuery = `SELECT * FROM steps WHERE id_lesson=${param.params.id}`;
     db.query(sqlQuery, (err, rows) => {
       if (err) {
         return failureCallback(err);

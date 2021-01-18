@@ -11,7 +11,7 @@ require('dotenv').config();
 
    secret: process.env.SECRET,
 
-  // publicKey:process.env.PUBLIC_KEY_IMAGE,
-  // privateKey:process.env.PRIVATE_KEY_IMAGE,
-  // urlEndpoint:process.env.URL_END_POINT_IMAGE
+   publicKey:process.env.PUBLIC_KEY_IMAGE,
+   privateKey:process.env.PRIVATE_KEY_IMAGE,
+   urlEndpoint:process.env.URL_END_POINT_IMAGE
  }

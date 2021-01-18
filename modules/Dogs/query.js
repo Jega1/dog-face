@@ -3,12 +3,16 @@ var ImageKit = require("imagekit");
 const config = require('../../config/keys');  //a voir
 
 
-
+ var imagekit = new ImageKit({
+     publicKey : config.publicKey,
+     privateKey : config.privateKey,
+     urlEndpoint :config.urlEndpoint
+ });
 
 
 exports.registerDog = (param, successCallback, failureCallback) => {
 		console.log(param);
-			let sqlQuery = `INSERT INTO dogs (id_dog, id_user, firstname, lastname, sex, race, puce_nu, birth_date, birth_certificate_nu, passport_nu) VALUES (NULL,"${param.body.id_user}","${param.body.firstname}", "${param.body.lastname}", "${param.body.sex}","${param.body.race}", "${param.body.puceNu}","${param.body.birth_date}", "${param.body. birthCertificateNu}", "${param.body.passportNu}" )`;
+			let sqlQuery = `INSERT INTO dogs (id_dog, id_user, firstname, lastname, sex, race, puce_nu, birth_date, birth_certificate_nu, passport_nu) VALUES (NULL,"${param.body.id_user}","${param.body.firstname}", "${param.body.lastname}", "${param.body.sex}","${param.body.race}", "${param.body.puce_nu}","${param.body.birth_date}", "${param.body. birth_certificate_nu}", "${param.body.passport_nu}" )`;
       db.query(sqlQuery, (err) => {
         if (err) {
           return failureCallback(err);

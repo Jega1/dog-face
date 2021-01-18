@@ -74,9 +74,9 @@ try{
     payload: { success: false, message: "Username & password missmatch" },
   };
 };
-//await added
-exports.getUser =  async  (req, callback) => {
-  await  UserQueries.getUser(req,
+
+exports.getUser =    (req, callback) => {
+  UserQueries.getUser(req,
       response => {
         return callback({ success: true, message: response });
       },
@@ -205,7 +205,7 @@ exports.getUser =  async  (req, callback) => {
 
 
   exports.editUser = (req, response) => {
-  const user = Queries.editUser(req);
+   const user = Queries.editUser(req);
      return response({ success: true, message: "USER  details updated" });
     };
 

@@ -1,27 +1,27 @@
 {
-  "name": "dogface",
-  "version": "1.0.0",
-  "description": "My lovely project",
-  "main": "app.js",
-  "engines": {
-    "node": "13.7.0"
-  },
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.4",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-jwt": "^5.3.1",
-    "imagekit": "^3.1.1",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.9.1",
-    "multer": "^1.4.2",
-    "mysql2": "^2.1.0",
-    "styled-components": "^5.1.1"
-  }
+	"name": "dogface",
+	"version": "1.0.0",
+	"description": "My lovely project",
+	"main": "app.js",
+	"engines": {
+		"node": "13.7.0"
+	},
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"axios": "^0.19.2",
+		"bcrypt": "^5.0.0",
+		"body-parser": "^1.19.0",
+		"cookie-parser": "^1.4.4",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"express-jwt": "^5.3.1",
+		"imagekit": "^3.1.1",
+		"jsonwebtoken": "^8.5.1",
+		"morgan": "^1.9.1",
+		"multer": "^1.4.2",
+		"mysql2": "^2.1.0",
+		"styled-components": "^5.1.1"
+	}
 }
