@@ -107,7 +107,7 @@ const db = require("../../setup/database");
               if (err) {
                            return failureCallback(err);
               } else {
-                        Queries.deleteAppoint(param);
+                        exports.deleteAppoint(param);
                         return successCallback("Appointment Cancelled");
               }
             });
