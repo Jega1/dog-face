@@ -91,6 +91,21 @@ exports.registerDog = (param, successCallback, failureCallback) => {
 
 
 
+   exports.deleteDog = (id, successCallback, failureCallback) => {
+//	 param.params.id_dog = +param.params.id_dog;
+	 id = +id;
+
+    let sqlQuery = `DELETE FROM dogs           
+                     WHERE id_dog =${id}`;
+    db.query(sqlQuery, (err, rows) => {
+      if (err) {
+        return failureCallback(err);
+      } else {
+        return successCallback("avatar deletedDog deleted");
+      }
+    });
+  },
+
 
 
 

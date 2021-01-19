@@ -16,6 +16,7 @@ router.post('/add-dog-image', upload.single('dogImage'), DogController.addDogIma
 router.post('/add-dog-images', upload.array('dogImage',10), DogController.addDogImage1);
 router.delete('/:id_image', DogController.deleteDogImage);
 router.get("/images/:id_dog", DogController.getAllDogImages);
+router.delete("/delete/:id", DogController.deleteDog);
 
 
 

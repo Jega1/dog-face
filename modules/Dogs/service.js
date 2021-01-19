@@ -1,6 +1,17 @@
 const Queries = require("./query");
 
 
+exports.deleteDog= (req, callback) => {
+    Queries.deleteDog(
+      req.params.id,
+      (response) => {
+        return callback({ success: true, message: response });
+      },
+      (error) => {
+        return callback({ success: false, message: error });
+      }
+    );
+  },
 
 
 exports.registerDog = (req, callback) => {

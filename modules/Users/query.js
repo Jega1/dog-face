@@ -26,19 +26,13 @@ exports.getUser =  (param, successCallback, failureCallback) => {
       }catch(err){
 
       }
-
-
-            return new Promise((resolve, reject) => {
+     return new Promise((resolve, reject) => {
          try{
           db.query(sqlQuery, (err, res) => {
             if (err) reject(err);
-
             resolve(res);
          });
-         }catch(err){
-
-         }
-
+         }catch(err){  }
     });
     };
 
@@ -151,79 +145,17 @@ exports.getUserVet = async (param, successCallback, failureCallback) => {
 };
 
 exports.delete = (id, successCallback, failureCallback) => {
-      let sqlQuery = `SELECT * FROM dogs where id_user=${id}`
-    db.query(sqlQuery, (err, rows) => {
-      if (err) {
-        return failureCallback(err);
-      }
-      if (rows.length > 0)
-      {
-    let sqlQuery1 = `DELETE FROM dog_has_trainning WHERE id_dog= ${rows[0].id_dog}`
-    db.query(sqlQuery1, (err, rows) => {
-
-      if (err) {
-        return failureCallback(err);
-      }
-
-      if (rows.length > 0) {
-        let sqlQuery2 = `DELETE FROM appointments  WHERE id_user= ${id}`
-        db.query(sqlQuery2, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-          }
-           let sqlQuery3 = `DELETE FROM dogs  WHERE id_user= ${id}`
-        db.query(sqlQuery3, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-          }
-               let sqlQuery4 = `DELETE FROM users  WHERE id_user= ${id}`
-        db.query(sqlQuery4, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-
-          }
-             return successCallback(rows);
-        })
-
-        })
-
-        })
-      } else {
-
-        let sqlQuery2 = `DELETE FROM appointments  WHERE id_user= ${id}`
-        db.query(sqlQuery2, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-
-          }
-           let sqlQuery3 = `DELETE FROM dogs  WHERE id_user= ${id}`
-        db.query(sqlQuery3, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-
-          }
-               let sqlQuery4 = `DELETE FROM users  WHERE id_user= ${id}`
-        db.query(sqlQuery4, (err, rows) => {
-          if (err) {
-            return failureCallback(err);
-
-          }
-          //sqlquery5
-             return successCallback(rows);
-        })
-            //  return successCallback(rows);
-        })
-              //  return successCallback(rows);
-        })
-        // return successCallback("No movie with this id");
-      }
-    });
-
-      }
-      else {
-        return successCallback(rows);
-      }
-    })
-
-  };
-
+  console.log(id)
+  id = +id;
+  // param.params.id_dog = +param.params.id_dog;
+  let sqlQuery = `DELETE FROM  users          
+                     WHERE id_user=${id}`;
+  db.query(sqlQuery, (err, rows) => {
+    if (err) {
+      return failureCallback(err);
+    } else {
+      return successCallback("avatar deletedDog deleted");
+    }
+  });
+};
+  
