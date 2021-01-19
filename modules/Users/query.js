@@ -99,7 +99,7 @@ try{
   users.is_veterinary = +users.is_veterinary
   let sqlQuery
   try{
-     sqlQuery =   `INSERT INTO users (id_user, username, email, password,telephone,is_veterinary,address,role,code_postal,ville,longitude,latitude) VALUES (NULL,"${users.username}","${users.email}","${users.hashedPassword}","${users.telephone}", "${users.is_veterinary}", "${users.address}","admin","${users.code_postal}","${users.ville}","${users.longitude}","${users.latitude}")`;
+     sqlQuery =   `INSERT INTO users (id_user, username, email, password,telephone,is_veterinary,address,role,code_postal,ville,longitude,latitude) VALUES (NULL,"${users.username}","${users.email}","${users.hashedPassword}","${users.telephone}", "${users.is_veterinary}", "${users.address}","user","${users.code_postal}","${users.ville}","${users.longitude}","${users.latitude}")`;
   }catch(err){
 
   }
