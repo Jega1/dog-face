@@ -45,7 +45,7 @@ const db = require("../../setup/database");
      appointData.id_dog = +appointData.id_dog;
      appointData.id_vet = +appointData.id_vet;
            return new Promise((resolve, reject) => {
-      let sqlQuery = `INSERT INTO appointments (id_appointment,id_user,id_dog,id_available,motif,id_vet) VALUES (NULL,"${appointData.id_user}", "${appointData.id_dog}", "${appointData.id_available}", "${appointData.motif}", "${appointData.id_vet}")`;
+      let sqlQuery = `INSERT INTO appointments (id_appointment,id_user, id_dog,id_available, motif,id_vet) VALUES (NULL,"${appointData.id_user}", "${appointData.id_dog}", "${appointData.id_available}", "${appointData.motif}", "${appointData.id_vet}")`;
        db.query(sqlQuery, (err, res) => {
          if (err) reject(err);
         //  console.log("ID_USER :", res.insertId);
@@ -66,7 +66,7 @@ const db = require("../../setup/database");
       if (err) {
         return failureCallback(err);
       } else {
-      Queries.createAppoint(param);
+  exports.createAppoint(param);
         return successCallback("Created Appointment");
       }
     });
